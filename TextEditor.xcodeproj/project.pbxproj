@@ -14,7 +14,18 @@
 		84813ECA2410157B008F91CA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84813EC82410157B008F91CA /* LaunchScreen.storyboard */; };
 		84813ED224101904008F91CA /* TextEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84813ED124101904008F91CA /* TextEditorViewModel.swift */; };
 		84813ED42410193B008F91CA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84813ED32410193B008F91CA /* Extensions.swift */; };
+		84813EEC2410400A008F91CA /* TextEditorViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84813EEB2410400A008F91CA /* TextEditorViewModelTest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84813EEE2410400A008F91CA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84813EB22410157B008F91CA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84813EB92410157B008F91CA;
+			remoteInfo = TextEditor;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		84813EBA2410157B008F91CA /* TextEditor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TextEditor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +37,20 @@
 		84813ECB2410157B008F91CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84813ED124101904008F91CA /* TextEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorViewModel.swift; sourceTree = "<group>"; };
 		84813ED32410193B008F91CA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		84813EE92410400A008F91CA /* TextEditorViewModelTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TextEditorViewModelTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84813EEB2410400A008F91CA /* TextEditorViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorViewModelTest.swift; sourceTree = "<group>"; };
+		84813EED2410400A008F91CA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		84813EB72410157B008F91CA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84813EE62410400A008F91CA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				84813EBC2410157B008F91CA /* TextEditor */,
+				84813EEA2410400A008F91CA /* TextEditorViewModelTest */,
 				84813EBB2410157B008F91CA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				84813EBA2410157B008F91CA /* TextEditor.app */,
+				84813EE92410400A008F91CA /* TextEditorViewModelTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -68,6 +91,15 @@
 				84813ECB2410157B008F91CA /* Info.plist */,
 			);
 			path = TextEditor;
+			sourceTree = "<group>";
+		};
+		84813EEA2410400A008F91CA /* TextEditorViewModelTest */ = {
+			isa = PBXGroup;
+			children = (
+				84813EEB2410400A008F91CA /* TextEditorViewModelTest.swift */,
+				84813EED2410400A008F91CA /* Info.plist */,
+			);
+			path = TextEditorViewModelTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +122,24 @@
 			productReference = 84813EBA2410157B008F91CA /* TextEditor.app */;
 			productType = "com.apple.product-type.application";
 		};
+		84813EE82410400A008F91CA /* TextEditorViewModelTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84813EF22410400A008F91CA /* Build configuration list for PBXNativeTarget "TextEditorViewModelTest" */;
+			buildPhases = (
+				84813EE52410400A008F91CA /* Sources */,
+				84813EE62410400A008F91CA /* Frameworks */,
+				84813EE72410400A008F91CA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84813EEF2410400A008F91CA /* PBXTargetDependency */,
+			);
+			name = TextEditorViewModelTest;
+			productName = TextEditorViewModelTest;
+			productReference = 84813EE92410400A008F91CA /* TextEditorViewModelTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -102,6 +152,10 @@
 				TargetAttributes = {
 					84813EB92410157B008F91CA = {
 						CreatedOnToolsVersion = 11.3;
+					};
+					84813EE82410400A008F91CA = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = 84813EB92410157B008F91CA;
 					};
 				};
 			};
@@ -119,6 +173,7 @@
 			projectRoot = "";
 			targets = (
 				84813EB92410157B008F91CA /* TextEditor */,
+				84813EE82410400A008F91CA /* TextEditorViewModelTest */,
 			);
 		};
 /* End PBXProject section */
@@ -131,6 +186,13 @@
 				84813ECA2410157B008F91CA /* LaunchScreen.storyboard in Resources */,
 				84813EC72410157B008F91CA /* Assets.xcassets in Resources */,
 				84813EC52410157B008F91CA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84813EE72410400A008F91CA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +210,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84813EE52410400A008F91CA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84813EEC2410400A008F91CA /* TextEditorViewModelTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84813EEF2410400A008F91CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84813EB92410157B008F91CA /* TextEditor */;
+			targetProxy = 84813EEE2410400A008F91CA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		84813EC32410157B008F91CA /* Main.storyboard */ = {
@@ -320,6 +398,46 @@
 			};
 			name = Release;
 		};
+		84813EF02410400A008F91CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6U9ZF9FGAG;
+				INFOPLIST_FILE = TextEditorViewModelTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peaksoft.TextEditorViewModelTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextEditor.app/TextEditor";
+			};
+			name = Debug;
+		};
+		84813EF12410400A008F91CA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6U9ZF9FGAG;
+				INFOPLIST_FILE = TextEditorViewModelTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peaksoft.TextEditorViewModelTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TextEditor.app/TextEditor";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -337,6 +455,15 @@
 			buildConfigurations = (
 				84813ECF2410157B008F91CA /* Debug */,
 				84813ED02410157B008F91CA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84813EF22410400A008F91CA /* Build configuration list for PBXNativeTarget "TextEditorViewModelTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84813EF02410400A008F91CA /* Debug */,
+				84813EF12410400A008F91CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
