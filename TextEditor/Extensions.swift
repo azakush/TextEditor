@@ -53,17 +53,17 @@ extension String{
         return count
     }
     
-    func getCurrentLineStartPosition(cursorPosition: Int) -> Int{
+    func getInsertTabPosition(cursorPosition: Int) -> Int{
         for i in stride(from: cursorPosition - 1, to: -1, by: -1){
             if self[i] == "\n"{
-                return i
+                return i + 1
             }
         }
         
         return 0
     }
     
-    func getCurrentLineInsertPostion(cursorPosition: Int) -> Int{
+    func getInsertLinePostion(cursorPosition: Int) -> Int{
         for i in stride(from: cursorPosition - 1, to: -1, by: -1){
             if self[i] == "\n"{
                 return i + 1
@@ -80,7 +80,7 @@ extension String{
     func isCurrentLineList(cursorPosition: Int) -> Bool{
         for i in stride(from: cursorPosition - 1, to: -1, by: -1){
             guard self[i] != "\n" else { return false }
-            if self[i] == "-" && (self[i-1] == "" || self[i-1] == "\n" || self[i-1] == "\t") {
+            if self[i] == "-" && ["","\n","\t"].contains(self[i-1]) {
                 return true
             }
         }
@@ -89,12 +89,10 @@ extension String{
     }
     
     mutating func makeList(cursorPosition: Int){
-        let currentListTabPosition = getCurrentLineInsertPostion(cursorPosition: cursorPosition)
-        self.insert(contentsOf: "- ", at: index(index: currentListTabPosition))
+        self.insert(contentsOf: "- ", at: index(index: getInsertLinePostion(cursorPosition: cursorPosition)))
     }
     
     mutating func addTab(cursorPosition: Int){
-        let currentListStartPosition = getCurrentLineStartPosition(cursorPosition: cursorPosition)
-        self.insert(contentsOf: "\t", at: index(index: currentListStartPosition > 0 ?  currentListStartPosition + 1 : 0))
+        self.insert(contentsOf: "\t", at: index(index: getInsertTabPosition(cursorPosition: cursorPosition)))
     }
 }
