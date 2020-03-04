@@ -12,9 +12,16 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     
+    private var viewModel : TextEditorViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addToolbar()
+        
+        viewModel = TextEditorViewModel()
+        viewModel.delegate = self
+        
+        textView.delegate = self
         textView.becomeFirstResponder()
     }
 
@@ -31,15 +38,31 @@ class ViewController: UIViewController {
     }
     
     @objc private func tabPressed() {
-        print("tab pressed")
+        viewModel.addTab(cursorPosition: textView.selectedRange.location)
     }
     
     @objc private func listPressed() {
-        print("list pressed")
+        viewModel.makeList(cursorPosition: textView.selectedRange.location)
     }
     
     @objc private func doneWithNumberPad() {
         view.endEditing(true)
     }
+}
+
+extension ViewController : UITextViewDelegate{
+    func textViewDidChange(_ textView: UITextView) {
+        viewModel.textChanged(text: textView.text, cursorPosition: textView.selectedRange.location)
+    }
+}
+
+extension ViewController : TextEditorViewModelDelegate{
+    func didChangeText(viewModel: TextEditorViewModel, text: String, cursorPosition: Int) {
+        let range = textView.selectedRange
+        textView.text = text
+        textView.selectedRange = NSRange(location: cursorPosition, length: range.length)
+    }
+    
+    
 }
 
